@@ -1,6 +1,6 @@
 {
   "repo": "lucas045057-eng/demo-counter-page",
-  "issue": "https://github.com/lucas045057-eng/secretary-playground/issues/2",
+  "issue": 2,
   "source_event": "lucas045057-eng/secretary-playground#2",
   "features": [
     {
@@ -8,14 +8,14 @@
       "behavior": "页面能点一下加一",
       "verification": "node --test",
       "state": "not_started",
-      "issue": "https://github.com/lucas045057-eng/secretary-playground/issues/2"
+      "issue": 2
     },
     {
       "id": "F2",
       "behavior": "刷新后计数还在",
       "verification": "node --test",
       "state": "not_started",
-      "issue": "https://github.com/lucas045057-eng/secretary-playground/issues/2"
+      "issue": 2
     }
   ]
 }
