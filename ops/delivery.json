@@ -22,6 +22,11 @@
       "scripts/features.mjs",
       "scripts/verify-feature.sh",
       "AGENTS.md"
+    ],
+    "command": [
+      "node",
+      "/home/agent/.agent-autoloop/secretary-tools/pi-review.mjs",
+      "{input}"
     ]
   },
   "health": {
