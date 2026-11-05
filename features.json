@@ -18,8 +18,12 @@
       "id": "F2",
       "behavior": "刷新后计数还在",
       "verification": "node --test",
-      "state": "not_started",
-      "issue": 2
+      "state": "passing",
+      "issue": 2,
+      "verified": {
+        "at": "2026-11-05T13:17:24.748Z",
+        "digest": "676c29a2826c783a7fb565b8282e9756393001fba4fd41c7dacf9e616eaef0fa"
+      }
     }
   ]
 }

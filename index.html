@@ -24,12 +24,35 @@
   <p><button type="button" id="increment">点我加一</button></p>
 
   <script>
-    // 计数器：点一下按钮，计数加一。
-    let count = 0;
+    // 计数器：点一下按钮，计数加一；计数存进 localStorage，刷新后还在。
+    // 存储不可用（隐私模式、被禁用）时照常计数，只是不保存。
+    const COUNT_KEY = "counter.count";
+    const storage = (() => {
+      try {
+        return typeof localStorage === "undefined" ? null : localStorage;
+      } catch {
+        return null;
+      }
+    })();
+    function readSavedCount() {
+      try {
+        const saved = Number.parseInt(storage?.getItem(COUNT_KEY) ?? "", 10);
+        return Number.isSafeInteger(saved) && saved >= 0 ? saved : 0;
+      } catch {
+        return 0;
+      }
+    }
+    let count = readSavedCount();
     const countEl = document.getElementById("count");
+    countEl.textContent = String(count);
     document.getElementById("increment").onclick = () => {
       count += 1;
       countEl.textContent = String(count);
+      try {
+        storage?.setItem(COUNT_KEY, String(count));
+      } catch {
+        // 存储写满或被禁用：本次计数仍显示，只是刷新后不保留。
+      }
     };
 
     // 页面只做一件事：读同目录的 version.json，把当前部署的提交显示出来。
