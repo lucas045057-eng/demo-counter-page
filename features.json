@@ -6,9 +6,13 @@
     {
       "id": "F1",
       "behavior": "页面能点一下加一",
-      "verification": "node --test",
-      "state": "not_started",
-      "issue": 2
+      "verification": "node --test tests/F1-counter.test.mjs",
+      "state": "passing",
+      "issue": 2,
+      "verified": {
+        "at": "2026-11-05T03:04:38.425Z",
+        "digest": "0e5147071927f3e5f425bda287777e85727252c7798cd1a83a13b0f7d31b92c2"
+      }
     },
     {
       "id": "F2",

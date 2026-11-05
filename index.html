@@ -19,7 +19,19 @@
   <p class="muted">完整提交：<span id="commit-full">—</span><br>构建时间：<span id="built-at">—</span></p>
   <p class="muted" id="status">正在读取 version.json …</p>
 
+  <h2>计数器</h2>
+  <p>已点击 <strong id="count">0</strong> 次</p>
+  <p><button type="button" id="increment">点我加一</button></p>
+
   <script>
+    // 计数器：点一下按钮，计数加一。
+    let count = 0;
+    const countEl = document.getElementById("count");
+    document.getElementById("increment").onclick = () => {
+      count += 1;
+      countEl.textContent = String(count);
+    };
+
     // 页面只做一件事：读同目录的 version.json，把当前部署的提交显示出来。
     // 注意用相对路径 "./version.json"：Pages 项目站点在 /<仓库名>/ 下，写成 "/version.json" 会指到别人的根。
     async function load() {
